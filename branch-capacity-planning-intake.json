@@ -1,0 +1,21 @@
+{
+  "intakeData": {
+    "modelName": "Branch Network Capacity Planning Model v2.1",
+    "purpose": "Forecasts customer foot traffic and teller transaction volumes by branch location to support staffing and capacity planning decisions. Outputs inform quarterly headcount recommendations reviewed by Regional Operations managers. No customer-facing decisions or automated actions.",
+    "businessLine": "Retail Banking — Operations Analytics",
+    "modelType": "Time series regression (SARIMA) with seasonal decomposition",
+    "decisionImpact": "Low — internal operational planning tool only. Outputs reviewed by human managers before any staffing action. No credit, lending, employment, or consumer-facing decisions. No ECOA, FCRA, or UDAAP applicability.",
+    "trainingDataSources": "Internal branch transaction logs and foot traffic counters (2019-2024). All internal data. No third-party vendors. No customer PII used as model features — aggregate transaction counts only.",
+    "piiPresent": "None — model operates on aggregated branch-level transaction counts. No individual customer data used.",
+    "dataLineageDocumented": "Fully documented. Data pipeline reviewed and signed off by data governance team Q1 2025. Data dictionary current.",
+    "dataQualityControls": "Automated completeness and range checks at ingestion. Missing data imputation documented and reviewed. Monthly data quality report reviewed by model owner. No open data quality issues.",
+    "explainabilityMethod": "SARIMA model is fully interpretable. Seasonal components, trend, and residuals documented. Regional managers receive plain-language forecast narrative with confidence intervals. No black-box components.",
+    "humanReview": "All staffing recommendations reviewed and approved by Regional Operations managers before implementation. Model output is one input among several — managers apply local knowledge and override when appropriate. Override rate approximately 12%, which is within expected range.",
+    "biasTestingPerformed": "N/A — model does not make decisions affecting individuals. Outputs are aggregate branch-level forecasts. No protected class exposure. Legal and Compliance confirmed no fair lending or employment law applicability.",
+    "driftMonitoring": "Monthly forecast accuracy monitoring with MAPE tracked against 4-week and 12-week horizons. Drift threshold defined: MAPE degradation >15% triggers model owner review. Post-COVID structural break handled via 2022 recalibration. Next scheduled recalibration Q3 2025.",
+    "regulatoryFrameworks": "SR 11-7 applied at proportionate low-risk tier. No consumer protection regulatory exposure. Internal model risk policy compliance confirmed. NIST AI RMF GOVERN and MAP functions documented at appropriate scope.",
+    "validationStatus": "Annual independent validation completed Q1 2025. Clean opinion — no findings. Validator noted strong documentation quality and well-calibrated confidence intervals. Next validation scheduled Q1 2026.",
+    "incidentResponse": "Model incident response plan documented. Low-risk tier: escalation trigger is sustained MAPE degradation or data feed failure. No incidents in 24-month production history.",
+    "additionalContext": "Model has a 24-month clean production history with no incidents, no override escalations, and consistent forecast accuracy. The Q3 2025 recalibration is a planned maintenance activity, not a response to any identified issue. Change will go through standard MRM change management process including incremental validation."
+  }
+}
